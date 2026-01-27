@@ -96,7 +96,7 @@ import UIKit
         setdown()
     }
     func setup() {
-        stop()
+        //stop()
         // Schedule repeating clicks
         let interval = 60.0 / _bpm
         _timer = Timer.publish(every: interval, on: .main, in: .common)
@@ -200,11 +200,13 @@ struct ContentView: View {
                     step: 1,
                     onEditingChanged: { editing in
                         isEditing = editing
+                        metronome.setup()
+
                         if isEditing {
-                            metronome.setRunning(false)
+                            //metronome.setRunning(false)
                         } else {
-                            metronome.setup()
-                            metronome.setRunning(true)
+                            //metronome.setup()
+                            //metronome.setRunning(true)
                         }
                     }
                 ).padding(.horizontal)
